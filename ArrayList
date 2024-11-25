@@ -1,0 +1,45 @@
+import java.util.Iterator;
+import java.util.List;
+import java.util.ArrayList;
+
+class Student {
+    int roll;
+    String name, course;
+    float marks;
+    public Student(int roll, String name, String course, float marks) {
+        this.roll = roll;
+        this.name = name;
+        this.course = course;
+        this.marks = marks;
+    }
+ public String getDetails() {
+        return "Roll: " + roll + ", Name: " + name + ", Course: " + course + ", Marks: " + marks;
+    }
+}
+
+public class Main{
+   
+    public static void showStudents(List<Student> students) {
+        Iterator<Student> itr = students.iterator();
+        while (itr.hasNext()) {
+            Student st = itr.next();
+            System.out.println(st.getDetails());
+        }
+    }
+
+    public static void main(String[] args) {
+        List<Student> li = new ArrayList<Student>();
+        li.add(new Student(100, "AAAA", "BTech", 90.0f)); 
+        Student st = new Student(101, "BBB", "MBA", 94.0f); 
+        li.add(st);
+        li.add(new Student(102, "Pitdocx", "LAW", 89.0f)); 
+
+        showStudents(li);
+    }
+}
+
+
+Output:
+Roll: 100, Name: AAAA, Course: BTech, Marks: 90.0
+Roll: 101, Name: BBB, Course: MBA, Marks: 94.0
+Roll: 102, Name: Pitdocx, Course: LAW, Marks: 89.0
